@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0715">
+<meta name="description" content="A little birthday surprise made with love for Zain Bhai.">
+<title>For Zain Bhai ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090714;--panel:rgba(34,29,48,.78);--line:rgba(218,195,255,.2);--pink:#f33491;--pink2:#ff5cab;--gold:#ffbf59;--cyan:#64dce6;--text:#fbf5ff;--muted:#c3b7d8}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--bg)}
+body{margin:0;min-height:100svh;color:var(--text);font-family:"DM Sans",system-ui,sans-serif;background:radial-gradient(ellipse at 88% 8%,rgba(177,20,114,.35),transparent 35%),radial-gradient(ellipse at 0% 100%,rgba(86,20,156,.38),transparent 37%),radial-gradient(ellipse at 50% 50%,#171022 0%,var(--bg) 68%);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+#symbols{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.symbol{position:absolute;font-family:Georgia,serif;opacity:.19;animation:drift 11s ease-in-out infinite alternate;user-select:none}
+@keyframes drift{from{transform:translateY(-10px) rotate(-9deg)}to{transform:translateY(20px) rotate(13deg)}}
+.topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:24px clamp(18px,5vw,44px) 0;max-width:1000px;margin:auto}
+.progress-wrap{flex:1;max-width:480px}
+.step-label{font:500 14px/1.4 monospace;letter-spacing:.2em;color:#c9badc;margin-bottom:12px}
+.progress{display:flex;gap:8px;align-items:center}
+.progress span{height:7px;border-radius:20px;flex:1;background:rgba(255,255,255,.14);transition:background .35s,transform .35s}
+.progress span.done{background:var(--pink);box-shadow:0 0 12px rgba(243,52,145,.45)}
+.progress span.current{background:var(--gold);transform:scaleY(1.15)}
+.music{border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:12px 17px;background:rgba(255,255,255,.07);color:#fff;backdrop-filter:blur(12px);white-space:nowrap}
+.music:active{transform:scale(.97)}
+main{position:relative;z-index:1;min-height:calc(100svh - 90px);display:grid;place-items:center;padding:clamp(26px,7vh,70px) 18px 38px}
+.card{width:min(100%,650px);min-height:420px;border:1px solid var(--line);border-radius:34px;padding:clamp(27px,6vw,54px);background:linear-gradient(145deg,rgba(38,32,52,.88),rgba(23,20,37,.82));box-shadow:0 25px 90px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(18px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:cardIn .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.eyebrow{color:var(--cyan);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:15px}
+h1,h2{font-family:"Dancing Script","Playfair Display",serif;font-weight:700;line-height:1.15;margin:0 0 24px;text-wrap:balance}
+h1{font-size:clamp(2.7rem,9vw,4.5rem)}
+h2{font-size:clamp(2.2rem,7vw,3.4rem)}
+p{color:var(--muted);font-size:clamp(1rem,3.6vw,1.17rem);line-height:1.75;margin:0 0 23px;max-width:490px}
+.highlight{color:var(--gold);font-family:"Dancing Script",cursive;font-size:1.18em}
+.btnrow{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-top:12px;width:100%}
+.btn{border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:15px 25px;min-height:54px;background:rgba(255,255,255,.08);color:#fff;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(115deg,var(--pink),#d92783);border-color:transparent;box-shadow:0 12px 32px rgba(243,52,145,.3);font-weight:700}
+.btn.primary:hover{box-shadow:0 14px 38px rgba(243,52,145,.45)}
+.btn.gold{background:linear-gradient(115deg,#ffd06b,#ffa63c);color:#281322;border:0;font-family:"Dancing Script",cursive;font-size:1.55rem;padding:16px 30px;border-radius:24px}
+.choices{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:4px 0 18px}
+.choice{border:1px solid rgba(255,255,255,.17);border-radius:20px;padding:15px 20px;background:rgba(255,255,255,.055);color:#f8f1ff;min-width:115px;transition:.2s}
+.choice:hover,.choice.selected{border-color:var(--cyan);background:rgba(100,220,230,.12);transform:translateY(-2px)}
+.answer{min-height:28px;color:var(--gold);margin:4px 0 14px;font-size:.96rem}
+.big-emoji{font-size:clamp(3.5rem,12vw,5.4rem);margin:0 0 15px;filter:drop-shadow(0 0 22px rgba(255,92,171,.28));animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
+.cake{position:relative;font-size:6rem;line-height:1.2;filter:drop-shadow(0 0 22px rgba(255,191,89,.22))}
+.letter{font-family:"Playfair Display",serif;font-style:italic;color:#f3e9ff;font-size:clamp(1.05rem,3.8vw,1.28rem);line-height:1.9;max-width:500px}
+.footer-note{color:rgba(216,200,239,.45);font-size:.78rem;margin-top:25px}
+.hidden{display:none!important}
+.confetti{position:fixed;top:-15px;width:8px;height:13px;z-index:10;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110svh) rotate(760deg);opacity:.1}}
+.spark{color:var(--gold);text-shadow:0 0 20px var(--gold)}
+@media(max-width:480px){.topbar{padding-top:18px;gap:10px}.music{padding:11px 12px;font-size:.86rem}.card{border-radius:28px;min-height:440px;padding:28px 22px}.btn{padding:14px 20px}.choice{min-width:100px;padding:13px 15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="symbols" aria-hidden="true"></div>
+<header class="topbar">
+  <div class="progress-wrap">
+    <div class="step-label" id="stepLabel">01 / 08</div>
+    <div class="progress" id="progress" aria-label="Birthday journey progress"></div>
+  </div>
+  <button class="music" id="musicBtn" type="button" aria-pressed="false">♫ Music off</button>
+</header>
+<main><section class="card" id="card" aria-live="polite"><div class="eyebrow">Birthday surprise</div><h1>Happy Birthday, Zain Bhai! 🎂</h1><p>Your surprise is loading. If this message stays here, refresh the page or check that the full index.html file was uploaded.</p><div class="btnrow"><button class="btn primary" onclick="location.reload()">Reload surprise ↻</button></div></section></main>
+<noscript><div style="position:relative;z-index:5;margin:1rem;padding:1rem;color:white;background:#24172f;border-radius:1rem">Please enable JavaScript in your browser to use the interactive birthday journey.</div></noscript>
+<script>
+const steps = [
+{render:()=>`
+  <div class="eyebrow">A little surprise for you</div>
+  <div class="big-emoji">✨🎁✨</div>
+  <h1>Hey, Zain Bhai!</h1>
+  <p>Someone has made a little journey just for you. No skipping the surprises… ready?</p>
+  <div class="btnrow"><button class="btn primary" data-next>Begin the surprise&nbsp; ✦</button></div>
+  <div class="footer-note">Made with love by your younger sibling ♡</div>`},
+{render:()=>`
+  <div class="eyebrow">Step into the spotlight</div>
+  <h2>Today is all about <span class="highlight">you.</span></h2>
+  <div class="big-emoji">🎂</div>
+  <p>One special day, one amazing brother, and a whole lot of love. You deserve to feel celebrated.</p>
+  <div class="btnrow"><button class="btn primary" data-next>Of course! Next →</button></div>`},
+{render:()=>`
+  <div class="eyebrow">A very important question</div>
+  <h2>What makes a big brother special?</h2>
+  <div class="choices" data-choices>
+    <button class="choice" data-answer="A protector 🛡️">A protector</button>
+    <button class="choice" data-answer="A partner in fun 😎">A partner in fun</button>
+    <button class="choice" data-answer="Someone who cares ❤️">Someone who cares</button>
+  </div>
+  <div class="answer" id="answer" aria-live="polite"></div>
+  <p>Hint: the right answer might be <span class="highlight">all of them.</span></p>
+  <div class="btnrow"><button class="btn primary" data-next>That's my answer →</button></div>`},
+{render:()=>`
+  <div class="eyebrow">Our equation</div>
+  <h2>Let's solve one more equation.</h2>
+  <div class="choices">
+    <span class="choice">Big Brother</span><span class="spark" style="font-size:1.8rem">+</span><span class="choice">Best Friend</span><span class="spark" style="font-size:1.8rem">=</span>
+  </div>
+  <button class="btn gold" type="button">Zain Bhai ♡</button>
+  <p style="margin-top:22px">Of course. Who else?</p>
+  <div class="btnrow"><button class="btn primary" data-next>Next →</button></div>`},
+{render:()=>`
+  <div class="eyebrow">A tiny appreciation note</div>
+  <div class="big-emoji">🫶</div>
+  <h2>Thank you for being <span class="highlight">you.</span></h2>
+  <p>Thank you for the laughs, the little moments, and simply being my big brother. I may not say it every day, but you mean a lot to me.</p>
+  <div class="btnrow"><button class="btn primary" data-next>One more surprise →</button></div>`},
+{render:()=>`
+  <div class="eyebrow">Will you accept this?</div>
+  <h2>Will you accept a big birthday wish from your sibling?</h2>
+  <div class="btnrow">
+    <button class="btn primary" data-yes>Yes, of course ♡</button>
+    <button class="btn" data-no>No 😏</button>
+  </div>
+  <div class="answer" id="answer" aria-live="polite"></div>`},
+{render:()=>`
+  <div class="eyebrow">Make a wish, Zain Bhai</div>
+  <div class="cake">🎂</div>
+  <h2>Happy Birthday!</h2>
+  <p>May this new year of your life bring you happiness, good health, success, peace, and countless reasons to smile.</p>
+  <div class="btnrow"><button class="btn primary" data-celebrate>Celebrate! 🎉</button><button class="btn" data-next>Read my letter →</button></div>`},
+{render:()=>`
+  <div class="eyebrow">From your younger sibling, with love</div>
+  <h2>To my forever <span class="highlight">hero.</span></h2>
+  <p class="letter">Dear Zain Bhai,<br>Happy Birthday! ❤️ I pray that Allah fills your life with happiness, protects you from every difficulty, and blesses you with success in everything you do. May your smile always stay bright and your dreams come true. No matter how much we tease each other, you'll always be an important part of my life. Stay blessed, keep shining, and never forget how much you are loved.<br><span class="highlight">Lots of love, always. ♡</span></p>
+  <div class="btnrow"><button class="btn primary" data-again>Replay the surprise ↻</button><button class="btn" data-confetti>One last celebration 🎉</button></div>
+  <div class="footer-note">This little website was made just for you.</div>`}
+];
+let current=0, musicOn=false, audioCtx=null, melodyTimer=null, noteIndex=0;
+const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46];
+const card=document.getElementById('card'), progress=document.getElementById('progress'), stepLabel=document.getElementById('stepLabel');
+for(let i=0;i<8;i++){const s=document.createElement('span');progress.appendChild(s)}
+const symbolHost=document.getElementById('symbols');
+const symbolList=['∑','+','★','√','÷','θ','∞','π','∫','×','♡','✦'];
+for(let i=0;i<19;i++){const s=document.createElement('span');s.className='symbol';s.textContent=symbolList[i%symbolList.length];s.style.left=(4+(i*37)%91)+'%';s.style.top=(8+(i*23)%85)+'%';s.style.fontSize=(20+(i*7)%27)+'px';s.style.color=['#ff58b0','#ffd06b','#67dce6','#b98aff'][i%4];s.style.animationDelay=(-i*.7)+'s';symbolHost.appendChild(s)}
+function render(){
+  stepLabel.textContent=String(current+1).padStart(2,'0')+' / 08';
+  [...progress.children].forEach((el,i)=>{el.className=i<current?'done':i===current?'current':''});
+  card.innerHTML=steps[current].render();
+  card.style.animation='none';void card.offsetWidth;card.style.animation='';
+  card.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',next));
+  card.querySelectorAll('[data-choices] .choice').forEach(b=>b.addEventListener('click',()=>{
+    card.querySelectorAll('[data-choices] .choice').forEach(x=>x.classList.remove('selected'));
+    b.classList.add('selected');const a=document.getElementById('answer');if(a)a.textContent='Exactly! '+b.dataset.answer+' — and so much more. ❤️';
+  }));
+  const yes=card.querySelector('[data-yes]');if(yes)yes.addEventListener('click',()=>{const a=document.getElementById('answer');a.textContent='Yay! Birthday wishes officially delivered. 💖';burst(45);setTimeout(next,1100)});
+  const no=card.querySelector('[data-no]');if(no)no.addEventListener('click',()=>{const a=document.getElementById('answer');a.textContent='Too late — the birthday love has already arrived! 😄';no.textContent='Okay, okay! ❤️'});
+  const celebrate=card.querySelector('[data-celebrate]');if(celebrate)celebrate.addEventListener('click',()=>{burst(90);celebrate.textContent='🎉 Make that wish! 🎉'});
+  const again=card.querySelector('[data-again]');if(again)again.addEventListener('click',()=>{current=0;render();window.scrollTo({top:0,behavior:'smooth'})});
+  const conf=card.querySelector('[data-confetti]');if(conf)conf.addEventListener('click',()=>burst(110));
+}
+function next(){if(current<steps.length-1){current++;render();window.scrollTo({top:0,behavior:'smooth'})}}
+function burst(count=55){const colors=['#f33491','#ffbf59','#64dce6','#c39aff','#fff4ff'];for(let i=0;i<count;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.animationDuration=(2.3+Math.random()*2.5)+'s';c.style.animationDelay=(Math.random()*.65)+'s';c.style.transform='rotate('+Math.random()*360+'deg)';document.body.appendChild(c);setTimeout(()=>c.remove(),5600)}}
+function tone(freq,duration=.25){if(!audioCtx)return;const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.045,audioCtx.currentTime+.035);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+duration);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+duration+.02)}
+function startMusic(){audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();audioCtx.resume();musicOn=true;noteIndex=0;const play=()=>{if(!musicOn)return;tone(notes[noteIndex++%notes.length],.22);melodyTimer=setTimeout(play,360)};play();document.getElementById('musicBtn').textContent='♫ Music on';document.getElementById('musicBtn').setAttribute('aria-pressed','true')}
+function stopMusic(){musicOn=false;clearTimeout(melodyTimer);document.getElementById('musicBtn').textContent='♫ Music off';document.getElementById('musicBtn').setAttribute('aria-pressed','false')}
+document.getElementById('musicBtn').addEventListener('click',()=>{if(musicOn)stopMusic();else startMusic()});
+try {
+  render();
+} catch (err) {
+  console.error('Birthday site startup error:', err);
+  card.innerHTML = `
+    <div class="eyebrow">One tiny technical hiccup</div>
+    <h2>Let's get your surprise ready!</h2>
+    <p>The birthday page could not start correctly. Please make sure the complete <b>index.html</b> file is in the top level of your GitHub repository, then refresh the page.</p>
+    <div class="btnrow"><button class="btn primary" onclick="location.reload()">Try again ↻</button></div>`;
+}
+</script>
+</body>
+</html>
